@@ -17,27 +17,27 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white);line-height:1.7;overflow-x:hidden;cursor:none}
-
+ 
 /* CURSOR */
 #cursor{position:fixed;width:12px;height:12px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transition:transform 0.15s,background 0.2s,width 0.2s,height 0.2s;transform:translate(-50%,-50%)}
 #cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(59,130,246,0.5);border-radius:50%;pointer-events:none;z-index:9998;transition:width 0.25s,height 0.25s,border-color 0.2s;transform:translate(-50%,-50%)}
 body.cursor-hover #cursor{width:8px;height:8px;background:var(--ice)}
 body.cursor-hover #cursor-ring{width:52px;height:52px;border-color:rgba(147,197,253,0.6)}
 body.cursor-click #cursor{transform:translate(-50%,-50%) scale(0.6)}
-
+ 
 /* NOISE */
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1;opacity:0.4}
-
+ 
 /* GRID */
 .grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 30%,transparent 100%)}
-
+ 
 /* ORBS */
 .orb{position:fixed;border-radius:50%;pointer-events:none;z-index:0;filter:blur(120px);opacity:0.18}
 .orb-1{width:600px;height:600px;background:#1D4ED8;top:-200px;left:-100px;animation:orbFloat 18s ease-in-out infinite}
 .orb-2{width:500px;height:500px;background:#0C447C;top:40%;right:-150px;animation:orbFloat 22s ease-in-out infinite reverse}
 .orb-3{width:400px;height:400px;background:#1E40AF;bottom:10%;left:20%;animation:orbFloat 15s ease-in-out infinite 3s}
 @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
-
+ 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,8,16,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:0.5px solid var(--border)}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
@@ -48,9 +48,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2.5rem;height:64px
 .nav-link:hover{color:var(--white)}
 .nav-cta{font-size:13px;font-weight:500;color:var(--white);background:rgba(59,130,246,0.15);border:0.5px solid rgba(59,130,246,0.35);border-radius:8px;padding:8px 18px;cursor:none;text-decoration:none;transition:all 0.2s;backdrop-filter:blur(8px)}
 .nav-cta:hover{background:rgba(59,130,246,0.25);border-color:rgba(59,130,246,0.6);box-shadow:0 0 20px rgba(59,130,246,0.2)}
-
+ 
 .wrap{position:relative;z-index:2}
-
+ 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 2rem 80px;text-align:center;position:relative}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ice);background:rgba(59,130,246,0.08);border:0.5px solid rgba(59,130,246,0.25);border-radius:100px;padding:6px 16px;margin-bottom:36px;opacity:0;animation:riseIn 0.8s 0.2s cubic-bezier(0.16,1,0.3,1) forwards}
@@ -77,21 +77,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2.5rem;height:64px
 .scroll-hint span{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
 .scroll-line{width:1px;height:40px;background:linear-gradient(var(--blue),transparent);animation:scrollPulse 2s ease-in-out infinite}
 @keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:1}}
-
+ 
 /* SECTIONS */
 section{padding:120px 2rem;max-width:780px;margin:0 auto}
 .sec-label{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);margin-bottom:20px;display:flex;align-items:center;gap:8px}
 .sec-label::before{content:'';width:20px;height:1px;background:var(--blue);display:block}
 .sec-h{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,44px);font-weight:700;letter-spacing:-1.2px;line-height:1.1;color:var(--white);margin-bottom:20px}
 .sec-body{font-size:16px;color:var(--slate);line-height:1.8;margin-bottom:16px}
-
+ 
 /* REVEAL */
 @keyframes riseIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-left{opacity:0;transform:translateX(-24px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
 .reveal-left.visible{opacity:1;transform:translateX(0)}
-
+ 
 /* PAIN CARDS */
 .pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px}
 .pain-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:16px;padding:28px;position:relative;overflow:hidden;transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s}
@@ -101,14 +101,14 @@ section{padding:120px 2rem;max-width:780px;margin:0 auto}
 .pain-card-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;color:var(--blue);letter-spacing:0.1em;margin-bottom:16px}
 .pain-card-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:600;color:var(--white);margin-bottom:8px}
 .pain-card-body{font-size:13px;color:var(--slate);line-height:1.65}
-
+ 
 /* CALLOUT */
 .callout{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:0.5px solid var(--border);border-radius:20px;padding:52px;position:relative;overflow:hidden}
 .callout::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(59,130,246,0.1),transparent 70%);border-radius:50%}
 .callout-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:28px}
 .callout-list li{display:flex;align-items:flex-start;gap:14px;font-size:15px;color:rgba(237,242,255,0.75);line-height:1.65}
 .callout-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:9px;box-shadow:0 0 8px var(--blue)}
-
+ 
 /* MARQUEE */
 .marquee-section{padding:80px 0;overflow:hidden}
 .marquee-label{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);text-align:center;margin-bottom:40px;display:flex;align-items:center;justify-content:center;gap:8px}
@@ -125,7 +125,7 @@ section{padding:120px 2rem;max-width:780px;margin:0 auto}
 .m-dot{width:22px;height:22px;border-radius:50%;background:var(--bg4);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .m-author{font-size:12px;font-weight:500;color:var(--slate)}
 .m-platform{font-size:11px;color:rgba(59,130,246,0.8)}
-
+ 
 /* PRODUCT */
 .mockup-shell{background:var(--bg2);border:0.5px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5),0 0 0 0.5px rgba(59,130,246,0.1);margin-top:52px}
 .mockup-bar{background:var(--bg3);border-bottom:0.5px solid var(--border);padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
@@ -148,7 +148,7 @@ section{padding:120px 2rem;max-width:780px;margin:0 auto}
 .f-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;color:var(--blue);width:32px;flex-shrink:0;padding-top:3px;letter-spacing:0.08em}
 .f-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:6px}
 .f-body{font-size:14px;color:var(--slate);line-height:1.7}
-
+ 
 /* WAITLIST */
 .waitlist-wrap{padding:120px 2rem;max-width:780px;margin:0 auto}
 .waitlist-card{background:linear-gradient(135deg,var(--navy) 0%,#021F3D 100%);border:0.5px solid rgba(59,130,246,0.25);border-radius:28px;padding:72px 60px;text-align:center;position:relative;overflow:hidden;box-shadow:0 0 80px rgba(59,130,246,0.12)}
@@ -169,7 +169,7 @@ section{padding:120px 2rem;max-width:780px;margin:0 auto}
 .perk-dot{width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 6px var(--blue)}
 .already-msg{font-size:13px;color:var(--ice);margin-top:12px;display:none}
 .already-msg.show{display:block}
-
+ 
 /* POPUP DIALOG */
 #popup-overlay{position:fixed;inset:0;background:rgba(6,8,16,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
 #popup-overlay.show{opacity:1;pointer-events:all}
@@ -180,19 +180,19 @@ section{padding:120px 2rem;max-width:780px;margin:0 auto}
 .popup-sub{font-size:14px;color:var(--slate);line-height:1.65;margin-bottom:28px}
 .popup-close{height:44px;padding:0 28px;background:rgba(59,130,246,0.15);border:0.5px solid rgba(59,130,246,0.3);border-radius:10px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:none;transition:background 0.2s}
 .popup-close:hover{background:rgba(59,130,246,0.25)}
-
+ 
 /* DIVIDER */
 .divider{width:100%;height:0.5px;background:linear-gradient(90deg,transparent,var(--border),transparent);max-width:780px;margin:0 auto}
-
+ 
 /* FOOTER */
 footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;align-items:center;justify-content:space-between;max-width:780px;margin:0 auto;position:relative;z-index:2}
 .footer-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
 .footer-wordmark{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--white)}
 .footer-legal{font-size:11px;color:var(--muted);line-height:1.6;text-align:right}
-
+ 
 /* DISCLAIMER */
 .disclaimer-bar{background:rgba(59,130,246,0.05);border-top:0.5px solid var(--border);padding:14px 2rem;text-align:center;font-size:11px;color:var(--muted);line-height:1.6;position:relative;z-index:2}
-
+ 
 @media(max-width:640px){
   .pain-grid{grid-template-columns:1fr}
   .hero-form{flex-direction:column}
@@ -208,10 +208,10 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
 </style>
 </head>
 <body>
-
+ 
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
-
+ 
 <!-- POPUP DIALOG -->
 <div id="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-name-el">
   <div id="popup-box">
@@ -223,14 +223,14 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     <button class="popup-close" onclick="closePopup()">Got it</button>
   </div>
 </div>
-
+ 
 <div class="grid-bg"></div>
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
-
+ 
 <div class="wrap">
-
+ 
 <nav>
   <a class="nav-logo" href="#">
     <div class="logo-icon">
@@ -247,7 +247,7 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     <a class="nav-cta" href="#waitlist">Join waitlist</a>
   </div>
 </nav>
-
+ 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">
@@ -285,7 +285,7 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     <div class="scroll-line"></div>
   </div>
 </div>
-
+ 
 <!-- PROBLEM -->
 <section id="problem">
   <p class="sec-label reveal">The problem</p>
@@ -315,7 +315,7 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     </div>
   </div>
 </section>
-
+ 
 <!-- CONSEQUENCE -->
 <section style="padding-top:0">
   <div class="callout reveal">
@@ -330,9 +330,9 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     </ul>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- SCROLLING REVIEWS -->
 <div class="marquee-section">
   <p class="marquee-label">You are not the only one</p>
@@ -340,9 +340,9 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     <div class="marquee-track" id="marquee-track"></div>
   </div>
 </div>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- PRODUCT -->
 <section id="product">
   <p class="sec-label reveal">The product</p>
@@ -384,16 +384,16 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     </div>
   </div>
 </section>
-
+ 
 <!-- WAITLIST -->
 <div class="waitlist-wrap" id="waitlist">
   <div class="waitlist-card reveal">
     <div class="waitlist-eyebrow">Early access &mdash; 50 spots only</div>
     <h2 class="waitlist-h">Request early access.<br>First 50 members get<br>three months free.</h2>
     <p class="waitlist-sub">Veris is in private beta. Leave your name and email. We will reach out with access details when your spot opens. No credit card at any stage.</p>
-
+ 
     <div id="form-area">
-      <form id="waitlist-form" action="https://hook.eu2.make.com/qxg2obfk7ktv3uwqkl3kaprylkqn1xj6" method="POST" onsubmit="handleWaitlist(event)" novalidate>
+      <form id="waitlist-form" action="https://hook.eu1.make.com/qxg2obfk7ktv3uwqkl3kaprylkqn1xj6" method="POST" onsubmit="handleWaitlist(event)" novalidate>
         <div class="waitlist-fields">
           <input class="waitlist-input" type="text" name="name" id="w-name" placeholder="Your first name" required autocomplete="given-name">
           <input class="waitlist-input" type="email" name="email" id="w-email" placeholder="your@email.com" required autocomplete="email">
@@ -403,13 +403,13 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
       <p class="waitlist-fine" style="margin-top:14px">No spam. No credit card. Unsubscribe anytime.</p>
       <p class="already-msg" id="already-msg">You are already on the list. We will be in touch soon.</p>
     </div>
-
+ 
     <div id="waitlist-success" style="display:none;text-align:center;padding:20px">
       <div style="font-size:32px;margin-bottom:12px">&#x2713;</div>
       <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:600;color:var(--white);margin-bottom:8px">Request received.</div>
       <div style="font-size:14px;color:var(--slate)">We will send your early access details shortly.</div>
     </div>
-
+ 
     <div class="waitlist-perks">
       <div class="perk"><div class="perk-dot"></div>Free beta access</div>
       <div class="perk"><div class="perk-dot"></div>3 months free at launch</div>
@@ -417,7 +417,7 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     </div>
   </div>
 </div>
-
+ 
 <footer>
   <a class="footer-logo" href="#">
     <div class="logo-icon" style="width:28px;height:28px;border-radius:7px">
@@ -433,13 +433,13 @@ footer{padding:40px 2.5rem;border-top:0.5px solid var(--border2);display:flex;al
     Veris is an independent product and is not affiliated with, endorsed by, or sponsored by any financial institution, exchange, or regulatory body.
   </div>
 </footer>
-
+ 
 <div class="disclaimer-bar">
   <strong style="color:var(--slate)">Disclaimer:</strong> Veris summarises publicly available regulatory documents for informational purposes only. Nothing on this page or within the Veris product constitutes financial, investment, legal, or tax advice. All SEC filings referenced are public domain documents sourced from the U.S. Securities and Exchange Commission's EDGAR database. A qualified financial advisor should review any investment decision before you act on it.
 </div>
-
+ 
 </div>
-
+ 
 <script>
 /* ============================================================
    QUOTES DATA
@@ -454,7 +454,7 @@ var quotes = [
   {text:"The tooling gap between institutional and retail research is not about access to data. Every filing is free. It is about the hours and infrastructure required to extract anything from it. Bloomberg solves that for institutions. Nothing solves it for everyone else.",author:"r/personalfinance",platform:"3,400 upvotes"},
   {text:"Eleven years of holding individual stocks. I have never read a 10-K beginning to end. The document that contains the most material information about every company I own is one I have never actually read.",author:"r/SecurityAnalysis",platform:"1,200 upvotes"},
 ];
-
+ 
 /* Build marquee — duplicate for seamless loop */
 var track = document.getElementById('marquee-track');
 var allQuotes = quotes.concat(quotes);
@@ -469,7 +469,7 @@ allQuotes.forEach(function(q){
     + '</div>';
   track.appendChild(card);
 });
-
+ 
 /* ============================================================
    CURSOR
 ============================================================ */
@@ -477,7 +477,7 @@ var cur = document.getElementById('cursor');
 var curR = document.getElementById('cursor-ring');
 var cx = window.innerWidth/2, cy = window.innerHeight/2;
 var rx = cx, ry = cy;
-
+ 
 document.addEventListener('mousemove', function(e){
   cx = e.clientX; cy = e.clientY;
   cur.style.left = cx+'px'; cur.style.top = cy+'px';
@@ -493,7 +493,7 @@ document.querySelectorAll('a,button,input,.pain-card,.m-card,.feature-item').for
   el.addEventListener('mouseenter',function(){document.body.classList.add('cursor-hover')});
   el.addEventListener('mouseleave',function(){document.body.classList.remove('cursor-hover')});
 });
-
+ 
 /* ============================================================
    SCROLL REVEAL
 ============================================================ */
@@ -501,7 +501,7 @@ var obs = new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
 },{threshold:0.12});
 document.querySelectorAll('.reveal,.reveal-left').forEach(function(el){obs.observe(el);});
-
+ 
 /* ============================================================
    CHAT DEMO
 ============================================================ */
@@ -511,7 +511,7 @@ var chatObs = new IntersectionObserver(function(entries){
 },{threshold:0.3});
 var mockup = document.querySelector('.mockup-shell');
 if(mockup) chatObs.observe(mockup);
-
+ 
 function playChat(){
   var area = document.getElementById('chat-area');
   var steps = [
@@ -548,7 +548,7 @@ function playChat(){
   }
   setTimeout(next,400);
 }
-
+ 
 /* ============================================================
    HERO — redirect to waitlist section
 ============================================================ */
@@ -556,7 +556,7 @@ function heroSignup(){
   var name  = document.getElementById('hero-name').value.trim();
   var email = document.getElementById('hero-email').value.trim();
   var ok = true;
-
+ 
   if(!name){
     document.getElementById('hero-name').style.borderColor='#EF4444';
     setTimeout(function(){document.getElementById('hero-name').style.borderColor='';},2000);
@@ -568,22 +568,22 @@ function heroSignup(){
     ok = false;
   }
   if(!ok) return;
-
+ 
   /* Pre-fill the bottom waitlist form and submit it directly */
   document.getElementById('w-name').value  = name;
   document.getElementById('w-email').value = email;
-
+ 
   /* If already signed up show message, else scroll and auto-submit */
   if(alreadySigned(email)){
     document.getElementById('waitlist').scrollIntoView({behavior:'smooth'});
     setTimeout(function(){ document.getElementById('already-msg').classList.add('show'); }, 600);
     return;
   }
-
+ 
   document.getElementById('waitlist').scrollIntoView({behavior:'smooth'});
   setTimeout(function(){ document.getElementById('waitlist-form').dispatchEvent(new Event('submit',{cancelable:true,bubbles:true})); }, 700);
 }
-
+ 
 /* ============================================================
    DUPLICATE PREVENTION — localStorage
    Stores email hash so same email can't sign up twice
@@ -593,17 +593,17 @@ function simpleHash(str){
   for(var i=0;i<str.length;i++){ h=((h<<5)-h)+str.charCodeAt(i); h=h&h; }
   return 'v_'+Math.abs(h).toString(36);
 }
-
+ 
 function alreadySigned(email){
   var key = simpleHash(email.toLowerCase().trim());
   return localStorage.getItem(key) === '1';
 }
-
+ 
 function markSigned(email){
   var key = simpleHash(email.toLowerCase().trim());
   localStorage.setItem(key,'1');
 }
-
+ 
 /* ============================================================
    POPUP
 ============================================================ */
@@ -614,17 +614,17 @@ function showPopup(name){
   document.getElementById('popup-overlay').classList.add('show');
   document.body.style.overflow='hidden';
 }
-
+ 
 function closePopup(){
   document.getElementById('popup-overlay').classList.remove('show');
   document.body.style.overflow='';
 }
-
+ 
 document.getElementById('popup-overlay').addEventListener('click',function(e){
   if(e.target===this) closePopup();
 });
 document.addEventListener('keydown',function(e){ if(e.key==='Escape') closePopup(); });
-
+ 
 /* ============================================================
    WAITLIST FORM SUBMIT
 ============================================================ */
@@ -633,7 +633,7 @@ function handleWaitlist(e){
   var name  = document.getElementById('w-name').value.trim();
   var email = document.getElementById('w-email').value.trim();
   var btn   = document.getElementById('w-btn');
-
+ 
   /* Validate */
   if(!name){
     document.getElementById('w-name').style.borderColor='#EF4444';
@@ -645,20 +645,20 @@ function handleWaitlist(e){
     setTimeout(function(){document.getElementById('w-email').style.borderColor='';},2000);
     return;
   }
-
+ 
   /* Duplicate check */
   if(alreadySigned(email)){
     document.getElementById('already-msg').classList.add('show');
     return;
   }
-
+ 
   /* Disable button during submit */
   btn.textContent = 'Sending...';
   btn.disabled = true;
-
+ 
   var form = document.getElementById('waitlist-form');
   var data = new FormData(form);
-
+ 
   fetch(form.action, {method:'POST',body:data,headers:{'Accept':'application/json'}})
     .then(function(r){
       markSigned(email);
@@ -672,7 +672,7 @@ function handleWaitlist(e){
       showPopup(name);
     });
 }
-
+ 
 /* ============================================================
    NAV SCROLL
 ============================================================ */
@@ -682,4 +682,3 @@ window.addEventListener('scroll',function(){
 </script>
 </body>
 </html>
-  
